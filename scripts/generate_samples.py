@@ -96,7 +96,7 @@ def generate_all_samples():
             "specs": {
                 "Set Pressure": "150 psi",
                 "Flow Rate": "45 GPM",
-                "Material": "316 Stainless Steel",
+                "Material": "Cast Iron",
                 "Max Operating Temp": "400 °F",
                 "Connection": "1 in NPT Female"
             }

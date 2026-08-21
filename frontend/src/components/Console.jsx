@@ -145,7 +145,8 @@ export default function Console({
   };
 
   const openRawPdf = (filename) => {
-    window.open(`${apiBaseUrl}/api/sample-pdf/${encodeURIComponent(filename)}`, '_blank');
+    const pdfUrl = `${apiBaseUrl}/api/sample-pdf/${encodeURIComponent(filename)}`;
+    window.open(pdfUrl, '_blank');
   };
 
   const defaultSamples = [
@@ -244,23 +245,18 @@ export default function Console({
           </div>
         </div>
 
-        {/* ── DEMO SPEC SPECIFICATION PDFS (Select, Inspect PDF, & Analyze) ── */}
+        {/* ── DEMO SPECIFICATION PDFS ── */}
         <div style={{ marginBottom: '24px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '20px', padding: '24px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px', flexWrap: 'wrap', gap: '10px' }}>
-            <div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.15em', color: 'var(--blue)', textTransform: 'uppercase', marginBottom: '2px' }}>
-                PRE-LOADED DEMO SPECIFICATIONS & CUSTOM TEST DATA
-              </div>
-              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '17px', fontWeight: 700, margin: 0 }}>
-                SELECT ANY SPEC SHEET TO VIEW ORIGINAL PDF OR ANALYZE & EXTRACT DATA
-              </h3>
+          <div style={{ marginBottom: '16px' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.15em', color: 'var(--blue)', textTransform: 'uppercase', marginBottom: '4px' }}>
+              DEMO SPECIFICATION PDFS
             </div>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--muted)' }}>
-              Click "View PDF" to open original document · Click card to run AI pipeline
-            </span>
+            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '16px', fontWeight: 700, margin: 0 }}>
+              Select a spec sheet to analyze with the AI pipeline
+            </h3>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: '14px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '12px' }}>
             {availableSamples.map((sample) => {
               const isSelected = selectedPdfFilename === sample.filename;
               const hasMatchingRecord = records.find(r => r.sku === sample.sku);
@@ -269,51 +265,45 @@ export default function Console({
                 <div
                   key={sample.filename}
                   style={{
-                    padding: '16px',
-                    background: isSelected ? 'rgba(62, 124, 177, 0.14)' : 'var(--surface-elevated)',
+                    padding: '14px',
+                    background: isSelected ? 'rgba(62, 124, 177, 0.12)' : 'var(--surface-elevated)',
                     border: isSelected ? '2px solid var(--blue)' : '1px solid var(--border)',
                     borderRadius: 'var(--radius)',
                     transition: 'all 0.2s ease',
                     display: 'flex',
                     flexDirection: 'column',
-                    justify: 'space-between'
+                    gap: '10px'
                   }}
                   className="hover-card"
                 >
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '10px' }}>
-                      <div style={{ width: '34px', height: '34px', borderRadius: '8px', background: 'rgba(62, 124, 177, 0.15)', color: 'var(--blue)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <Icon.FileText />
-                      </div>
-                      <span className="badge badge-blue" style={{ fontSize: '10px' }}>{sample.tag || sample.category}</span>
-                    </div>
-                    
-                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '14px', fontWeight: 700, color: 'var(--text)', marginBottom: '4px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '13px', fontWeight: 600, color: 'var(--text)' }}>
                       {sample.title}
                     </div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--muted)', marginBottom: '14px', display: 'flex', justifyContent: 'space-between' }}>
-                      <span>SKU: {sample.sku}</span>
-                      {hasMatchingRecord && <span style={{ color: 'var(--success)', fontWeight: 600 }}>✓ Analyzed</span>}
-                    </div>
+                    <span className="badge badge-blue" style={{ fontSize: '9px' }}>{sample.tag || sample.category}</span>
+                  </div>
+                  
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--muted)', display: 'flex', justifyContent: 'space-between' }}>
+                    <span>SKU: {sample.sku}</span>
+                    {hasMatchingRecord && <span style={{ color: 'var(--success)', fontWeight: 600 }}>✓</span>}
                   </div>
 
-                  {/* Dual Action Buttons */}
-                  <div style={{ display: 'flex', gap: '8px', paddingTop: '10px', borderTop: '1px solid var(--border)' }}>
+                  <div style={{ display: 'flex', gap: '8px', paddingTop: '4px', borderTop: '1px solid var(--border)' }}>
                     <button
                       className="btn btn-secondary"
-                      style={{ flex: 1, fontSize: '11px', padding: '6px 8px', justifyContent: 'center' }}
+                      style={{ flex: 1, fontSize: '10px', padding: '5px 8px', justifyContent: 'center' }}
                       onClick={() => openRawPdf(sample.filename)}
-                      title="Open raw PDF file in new browser tab to inspect source content"
+                      title="View original PDF"
                     >
                       <Icon.ExternalLink /> View PDF
                     </button>
 
                     <button
                       className="btn btn-primary"
-                      style={{ flex: 1, fontSize: '11px', padding: '6px 8px', justifyContent: 'center' }}
+                      style={{ flex: 1, fontSize: '10px', padding: '5px 8px', justifyContent: 'center' }}
                       onClick={() => !isProcessing && onProcessSamplePDF(sample.filename)}
                       disabled={isProcessing}
-                      title="Run AI extraction, unit normalization & RAG enrichment on this PDF"
+                      title="Run AI analysis"
                     >
                       <Icon.Zap /> Analyze
                     </button>
@@ -324,15 +314,14 @@ export default function Console({
           </div>
         </div>
 
-        {/* ── CUSTOM PDF UPLOAD / DROP ZONE WITH EASY DEMO PDF PICKER ── */}
-        <div style={{ marginBottom: '24px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '20px', padding: '24px' }}>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.15em', color: 'var(--blue)', textTransform: 'uppercase', marginBottom: '4px' }}>
-            UPLOAD CUSTOM PRODUCT SPEC PDF
+        {/* ── CUSTOM PDF UPLOAD / DROP ZONE ── */}
+        <div style={{ marginBottom: '24px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '20px', padding: '20px' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.15em', color: 'var(--blue)', textTransform: 'uppercase', marginBottom: '8px' }}>
+            UPLOAD CUSTOM PDF
           </div>
 
           <div
             className={`drop-zone${isDragging ? ' dragging' : ''}`}
-            style={{ marginBottom: '16px' }}
             onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
             onDragLeave={() => setIsDragging(false)}
             onDrop={handleDrop}
@@ -343,29 +332,7 @@ export default function Console({
             aria-label="Drop zone: drag and drop a PDF spec sheet"
           >
             <div className="drop-zone-icon"><Icon.Upload /></div>
-            <div className="drop-zone-title">DRAG & DROP CUSTOM SPECIFICATION PDF HERE</div>
-            <div className="drop-zone-sub">Drop your own PDF datasheet or click to browse · PDF only · Max 50MB</div>
-          </div>
-
-          {/* Quick Demo PDF Quick-Links Banner */}
-          <div style={{ padding: '14px 18px', background: 'var(--surface-elevated)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', fontFamily: 'var(--font-mono)' }}>
-              <Icon.Info />
-              <span style={{ color: 'var(--muted)' }}>Want to test custom upload with pre-built demo PDFs?</span>
-            </div>
-            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              {availableSamples.slice(0, 3).map((s) => (
-                <button
-                  key={s.filename}
-                  className="btn btn-secondary"
-                  style={{ fontSize: '11px', padding: '4px 10px' }}
-                  onClick={() => openRawPdf(s.filename)}
-                  title={`Download/Open ${s.title}`}
-                >
-                  <Icon.ExternalLink /> Open {s.title.split(' ')[0]} PDF
-                </button>
-              ))}
-            </div>
+            <div className="drop-zone-title">Drag & drop PDF or click to browse</div>
           </div>
         </div>
 
@@ -374,9 +341,9 @@ export default function Console({
           <div className="processing-box" style={{ marginBottom: '24px' }}>
             <div className="processing-header">
               <div className="processing-title">
-                <Icon.Spinner /> PIPELINE EXECUTION IN PROGRESS...
+                <Icon.Spinner /> Processing...
               </div>
-              <div className="processing-step-count">STEP {processingStep} OF 5</div>
+              <div className="processing-step-count">Step {processingStep} of 5</div>
             </div>
             <div className="processing-steps">
               {STEPS.map((s, i) => (
@@ -389,9 +356,7 @@ export default function Console({
               <div className="processing-log">
                 {processingLogs.map((l, idx) => (
                   <div key={idx} className="processing-log-line">
-                    <span className="processing-log-prefix">&gt;</span>
                     <span className="processing-log-msg">{l.message}</span>
-                    {l.details && <span className="processing-log-detail">({l.details})</span>}
                   </div>
                 ))}
               </div>
@@ -402,12 +367,11 @@ export default function Console({
         {/* ── Metrics ── */}
         <div className="metrics-grid">
           {[
-            { label: 'PRODUCTS PROCESSED', value: summary.products_processed, sub: 'Automated', className: '' },
-            { label: 'ATTRIBUTES EXTRACTED', value: summary.attributes_extracted, sub: 'Schema Guided', className: '' },
-            { label: 'ENRICHED VIA RAG', value: summary.attributes_enriched, sub: 'Corpus Grounded', className: 'warning' },
-            { label: 'VERIFIED PASSED', value: summary.attributes_verified, sub: 'Range Checked', className: 'blue' },
-            { label: 'NEEDS REVIEW', value: summary.needs_review, sub: 'Human-in-Loop', className: 'error' },
-            { label: 'AVG CONFIDENCE', value: `${summary.average_confidence}%`, sub: 'Weighted Formula', className: 'blue', highlight: true },
+            { label: 'PROCESSED', value: summary.products_processed, sub: 'Products', className: '' },
+            { label: 'EXTRACTED', value: summary.attributes_extracted, sub: 'Attributes', className: '' },
+            { label: 'ENRICHED', value: summary.attributes_enriched, sub: 'Via RAG', className: 'warning' },
+            { label: 'REVIEW', value: summary.needs_review, sub: 'Required', className: 'error' },
+            { label: 'CONFIDENCE', value: `${summary.average_confidence}%`, sub: 'Average', className: 'blue', highlight: true },
           ].map((m, i) => (
             <div key={i} className={`metric-card${m.highlight ? ' highlight' : ''}`}>
               <div className="metric-label">{m.label}</div>

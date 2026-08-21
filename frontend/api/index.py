@@ -1,8 +1,9 @@
 """
 Apex Intelligence API — Flask edition
-Pure Python, no Rust compilation required. Works on all Python versions including 3.14.
+For Vercel deployment - connects to real backend pipeline when available.
 """
 import os
+import sys
 import json
 import csv
 import io
@@ -15,6 +16,21 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("apex_api")
 
 app = Flask(__name__)
+
+# Try to import real backend, fall back to demo mode
+try:
+    from backend.schemas import PipelineResponse, BatchResponse, ReviewActionRequest
+    from backend.pipeline import run_product_pipeline, run_batch_pipeline
+    from backend.batch_store import batch_store
+    from backend.services.vector_store import load_reference_corpus
+    from backend.services.llm_service import llm_service
+    from backend.config import REFERENCE_CORPUS_DIR, UPLOADS_DIR
+    from scripts.generate_samples import generate_all_samples
+    REAL_BACKEND_AVAILABLE = True
+    logger.info("Real backend pipeline imported successfully")
+except ImportError as e:
+    REAL_BACKEND_AVAILABLE = False
+    logger.warning(f"Real backend not available, using demo mode: {e}")
 
 # ── CORS ─────────────────────────────────────────────────────────────────────
 

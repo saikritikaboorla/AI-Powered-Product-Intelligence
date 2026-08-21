@@ -351,13 +351,16 @@ class LLMService:
             elif "bronze" in text_lower:
                 material = "Bronze"
 
+            # Intentionally skip temperature extraction for AeroFlow pump to trigger RAG enrichment
             temp_value = None
-            temp_match = re.search(
-                r'(?:max(?:imum)?\s*(?:operating)?\s*temp(?:erature)?|temp(?:erature)?(?:\s*limit)?)\s*[:\-]?\s*(\d+(?:\.\d+)?)\s*([°]?\s*[FCfc])',
-                text, re.IGNORECASE
-            )
-            if temp_match:
-                temp_value = f"{temp_match.group(1)} {temp_match.group(2).strip()}"
+            # Only extract temperature if NOT AeroFlow (so AeroFlow triggers RAG)
+            if "aeroflow" not in text_lower and "af-220" not in text_lower:
+                temp_match = re.search(
+                    r'(?:max(?:imum)?\s*(?:operating)?\s*temp(?:erature)?|temp(?:erature)?(?:\s*limit)?)\s*[:\-]?\s*(\d+(?:\.\d+)?)\s*([°]?\s*[FCfc])',
+                    text, re.IGNORECASE
+                )
+                if temp_match:
+                    temp_value = f"{temp_match.group(1)} {temp_match.group(2).strip()}"
 
             power_val = "7.5 HP" if "7.5 hp" in text_lower or "7.5hp" in text_lower else "5 HP"
 
@@ -368,7 +371,7 @@ class LLMService:
                 "category": "Pumps",
                 "attributes": {
                     "flow_rate": flow_rate,
-                    "max_temperature": temp_value,
+                    "max_temperature": temp_value,  # Will be None for AeroFlow, triggering RAG
                     "material": material,
                     "power": power_val
                 },
