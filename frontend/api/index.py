@@ -89,7 +89,7 @@ storage = SimpleStorage()
 SAMPLE_ATTRIBUTES = {
     "AF-220-XP": {
         "flow_rate":       {"value": "220 GPM",            "confidence": 0.92, "method": "extracted", "validation_status": "passed",  "source": "aeroflow_af220_pump.pdf:page 2",      "evidence": "Maximum flow rate rated at 220 GPM at 3450 RPM."},
-        "max_temperature": {"value": "180\u00b0F",         "confidence": 0.88, "method": "extracted", "validation_status": "passed",  "source": "aeroflow_af220_pump.pdf:page 3",      "evidence": "Fluid temperature continuous rating 180 deg F."},
+        "max_temperature": {"value": None,                "confidence": 0.0,  "method": "rag_enriched", "validation_status": "warning", "source": "RAG Enrichment:reference_corpus",  "evidence": "Temperature skipped to trigger RAG enrichment"},
         "material":        {"value": "316 Stainless Steel","confidence": 0.95, "method": "extracted", "validation_status": "passed",  "source": "aeroflow_af220_pump.pdf:page 1",      "evidence": "Wetted components constructed of 316SS."},
         "power":           {"value": "5 HP",               "confidence": 0.85, "method": "extracted", "validation_status": "passed",  "source": "aeroflow_af220_pump.pdf:page 2",      "evidence": "Driven by 5 HP TEFC motor."},
     },
@@ -131,8 +131,11 @@ def _is_demo_mode():
 
 def _make_record(sample):
     attrs = SAMPLE_ATTRIBUTES.get(sample["sku"], {})
-    review_required = any(f.get("validation_status") in ("warning", "conflict") for f in attrs.values())
+    review_required = any(f.get("validation_status") in ("warning", "conflict") for f in attrs.values() if f.get("value") is not None)
     demo = _is_demo_mode()
+    conflicts = []
+    if review_required:
+        conflicts = ["Material inferred from brand designation requires human verification."]
     return {
         "sku": sample["sku"],
         "is_demo": demo,
@@ -141,7 +144,7 @@ def _make_record(sample):
         "attributes": attrs,
         "validation": {
             "review_required": review_required,
-            "conflicts": ["Material inferred from brand designation requires human verification."] if review_required else [],
+            "conflicts": conflicts,
         },
     }
 
