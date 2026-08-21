@@ -1,0 +1,21 @@
+# INDUSTRIAL PUMP STANDARDS AND SPECIFICATIONS
+
+## 1. Flow Rate and Pressure Ratings
+- Typical industrial centrifugal pumps operate in flow rate ranges between 10 GPM (Gallons Per Minute) and 1000 GPM.
+- High-pressure multi-stage pumps can reach pressures up to 600 PSI, whereas single-stage transfer pumps typically operate at 50 to 150 PSI.
+- For chemical transfer applications, the standard operating flow rate is generally limited to 80 GPM to prevent static charge buildup in non-conductive piping.
+
+## 2. Temperature Limits
+- Standard cast iron and carbon steel centrifugal pumps have a maximum operating temperature rating of 220°F (104°C).
+- High-temperature pumps featuring stainless steel or alloy construction and viton seals can operate up to 400°F (204°C).
+- For hot oil applications, specialized thermal barrier pumps can withstand up to 650°F (343°C).
+
+## 3. Recommended Materials
+- Water transfer pumps: Cast iron casing, bronze impeller, carbon/ceramic mechanical shaft seals.
+- Corrosive chemical pumps: 316 Stainless Steel, PVDF, or PTFE lining with Hastelloy impellers and Viton or Kalrez seals.
+- Slurry/abrasive applications: High-chrome iron or natural rubber-lined casing to withstand wear.
+
+## 4. Power and Efficiency
+- Standard electric motor couplings range from 1 HP to 150 HP depending on flow and head pressure requirements.
+- Standard industrial voltage configurations are 230V/460V three-phase for motor ratings above 5 HP.
+- Frame sizing for standard NEMA motors coupling to centrifugal pumps is typically 56J, 143JM, or 184JM.

@@ -1,0 +1,619 @@
+{
+  "records": [
+    {
+      "sku": "AF-220-XP",
+      "name": {
+        "value": "AeroFlow Heavy-Duty Centrifugal Pump",
+        "original_value": "AeroFlow Heavy-Duty Centrifugal Pump",
+        "normalized_value": "AeroFlow Heavy-Duty Centrifugal Pump",
+        "normalized_unit": null,
+        "confidence": 0.99,
+        "method": "extracted",
+        "source": "aeroflow_af220_pump.pdf",
+        "evidence": "AeroFlow Heavy-Duty Centrifugal Pump",
+        "evidence_chunk": null,
+        "page_number": null,
+        "validation_status": "passed"
+      },
+      "category": {
+        "value": "Pumps",
+        "original_value": "Pumps",
+        "normalized_value": "Pumps",
+        "normalized_unit": null,
+        "confidence": 1.0,
+        "method": "extracted",
+        "source": "aeroflow_af220_pump.pdf",
+        "evidence": "Centrifugal Pump",
+        "evidence_chunk": null,
+        "page_number": null,
+        "validation_status": "passed"
+      },
+      "attributes": {
+        "flow_rate": {
+          "value": "150.0 GPM",
+          "original_value": "150 GPM",
+          "normalized_value": "150.0 GPM",
+          "normalized_unit": "GPM",
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "aeroflow_af220_pump.pdf",
+          "evidence": "150 GPM",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "material": {
+          "value": "Cast Iron",
+          "original_value": "Cast Iron",
+          "normalized_value": "Cast Iron",
+          "normalized_unit": null,
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "aeroflow_af220_pump.pdf",
+          "evidence": "Material: Cast Iron",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "power": {
+          "value": "7.5 HP (5.59 kW)",
+          "original_value": "7.5 HP",
+          "normalized_value": "7.5 HP (5.59 kW)",
+          "normalized_unit": "HP",
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "aeroflow_af220_pump.pdf",
+          "evidence": "Power: 7.5 HP",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "max_temperature": {
+          "value": "220.0 \u00b0F (104.4 \u00b0C)",
+          "original_value": "220 \u00b0F (104 \u00b0C)",
+          "normalized_value": "220.0 \u00b0F (104.4 \u00b0C)",
+          "normalized_unit": "\u00b0F",
+          "confidence": 0.93,
+          "method": "inferred",
+          "source": "Reference Corpus: pump_standards.txt (Sec 2. Standard Cast Iron Temperature limits)",
+          "evidence": "Quote: \"Standard Cast Iron centrifugal pumps are rated for a maximum operating temperature of 220\u00b0F (104\u00b0C).\"",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        }
+      },
+      "validation": {
+        "conflicts": [],
+        "review_required": false,
+        "field_statuses": {
+          "flow_rate": "passed",
+          "material": "passed",
+          "power": "passed",
+          "max_temperature": "passed"
+        }
+      },
+      "pipeline_version": "1.0.0"
+    },
+    {
+      "sku": "VM3613T",
+      "name": {
+        "value": "Baldor Industrial Electric Motor",
+        "original_value": "Baldor Industrial Electric Motor",
+        "normalized_value": "Baldor Industrial Electric Motor",
+        "normalized_unit": null,
+        "confidence": 0.99,
+        "method": "extracted",
+        "source": "baldor_motor.pdf",
+        "evidence": "Baldor Industrial Electric Motor",
+        "evidence_chunk": null,
+        "page_number": null,
+        "validation_status": "passed"
+      },
+      "category": {
+        "value": "Motors",
+        "original_value": "Motors",
+        "normalized_value": "Motors",
+        "normalized_unit": null,
+        "confidence": 1.0,
+        "method": "extracted",
+        "source": "baldor_motor.pdf",
+        "evidence": "Motors",
+        "evidence_chunk": null,
+        "page_number": null,
+        "validation_status": "passed"
+      },
+      "attributes": {
+        "voltage": {
+          "value": "230.0 V",
+          "original_value": "230 V",
+          "normalized_value": "230.0 V",
+          "normalized_unit": "V",
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "baldor_motor.pdf",
+          "evidence": "Voltage: 230 V",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "power": {
+          "value": "insufficient_data",
+          "original_value": "5 HP",
+          "normalized_value": "5.0 HP (3.73 kW)",
+          "normalized_unit": "HP",
+          "confidence": 0.0,
+          "method": "flagged",
+          "source": "baldor_motor.pdf",
+          "evidence": "Power: 5 HP",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "warning"
+        },
+        "speed": {
+          "value": "1750.0 RPM",
+          "original_value": "1750 RPM",
+          "normalized_value": "1750.0 RPM",
+          "normalized_unit": "RPM",
+          "confidence": 1.0,
+          "method": "extracted",
+          "source": "baldor_motor.pdf",
+          "evidence": "Speed: 1750 RPM",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "frame_size": {
+          "value": "NEMA 184T",
+          "original_value": "NEMA 184T",
+          "normalized_value": "NEMA 184T",
+          "normalized_unit": null,
+          "confidence": 0.93,
+          "method": "inferred",
+          "source": "Reference Corpus: motor_standards.txt (Sec 2. NEMA Frame Sizes for 3 HP to 5 HP Motors)",
+          "evidence": "Quote: \"Standard NEMA frame size for 5 HP 1750 RPM motors is NEMA 184T.\"",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        }
+      },
+      "validation": {
+        "conflicts": [],
+        "review_required": true,
+        "field_statuses": {
+          "voltage": "passed",
+          "power": "passed",
+          "speed": "passed",
+          "frame_size": "passed"
+        }
+      },
+      "pipeline_version": "1.0.0"
+    },
+    {
+      "sku": "SCR-G8-3816",
+      "name": {
+        "value": "Grade 8 Hex Cap Screw",
+        "original_value": "Grade 8 Hex Cap Screw",
+        "normalized_value": "Grade 8 Hex Cap Screw",
+        "normalized_unit": null,
+        "confidence": 0.99,
+        "method": "extracted",
+        "source": "grade8_screw.pdf",
+        "evidence": "Grade 8 Hex Cap Screw",
+        "evidence_chunk": null,
+        "page_number": null,
+        "validation_status": "passed"
+      },
+      "category": {
+        "value": "Fasteners",
+        "original_value": "Fasteners",
+        "normalized_value": "Fasteners",
+        "normalized_unit": null,
+        "confidence": 1.0,
+        "method": "extracted",
+        "source": "grade8_screw.pdf",
+        "evidence": "Fasteners",
+        "evidence_chunk": null,
+        "page_number": null,
+        "validation_status": "passed"
+      },
+      "attributes": {
+        "thread_size": {
+          "value": "3/8-16",
+          "original_value": "3/8-16",
+          "normalized_value": "3/8-16",
+          "normalized_unit": null,
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "grade8_screw.pdf",
+          "evidence": "Thread Size: 3/8-16",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "tensile_strength": {
+          "value": "150000.0 psi (10342.14 bar)",
+          "original_value": "150000 psi",
+          "normalized_value": "150000.0 psi (10342.14 bar)",
+          "normalized_unit": "psi",
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "grade8_screw.pdf",
+          "evidence": "Tensile Strength: 150000 psi",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "finish": {
+          "value": "Yellow Zinc Plated",
+          "original_value": "Yellow Zinc Plated",
+          "normalized_value": "Yellow Zinc Plated",
+          "normalized_unit": null,
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "grade8_screw.pdf",
+          "evidence": "Finish: Yellow Zinc Plated",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "material_grade": {
+          "value": "Medium Carbon Alloy Steel, Quenched & Tempered (Grade 8)",
+          "original_value": "Medium Carbon Alloy Steel, Quenched & Tempered (Grade 8)",
+          "normalized_value": "Medium Carbon Alloy Steel, Quenched & Tempered (Grade 8)",
+          "normalized_unit": null,
+          "confidence": 0.93,
+          "method": "inferred",
+          "source": "Reference Corpus: fastener_standards.txt (Sec 1. Material Grades - Grade 8 Bolts)",
+          "evidence": "Quote: \"SAE J429 Grade 8 fasteners require medium carbon alloy steel, quenched and tempered.\"",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "plating": {
+          "value": "insufficient_data",
+          "original_value": "insufficient_data",
+          "normalized_value": "insufficient_data",
+          "normalized_unit": null,
+          "confidence": 0.0,
+          "method": "flagged",
+          "source": null,
+          "evidence": "No supporting evidence found in document or reference corpus.",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "warning"
+        }
+      },
+      "validation": {
+        "conflicts": [],
+        "review_required": true,
+        "field_statuses": {
+          "thread_size": "passed",
+          "tensile_strength": "passed",
+          "finish": "passed",
+          "material_grade": "passed",
+          "plating": "warning"
+        }
+      },
+      "pipeline_version": "1.0.0"
+    },
+    {
+      "sku": "CF-400-IND",
+      "name": {
+        "value": "Baldor Industrial Electric Motor",
+        "original_value": "Baldor Industrial Electric Motor",
+        "normalized_value": "Baldor Industrial Electric Motor",
+        "normalized_unit": null,
+        "confidence": 0.99,
+        "method": "extracted",
+        "source": "milacron_fan.pdf",
+        "evidence": "Baldor Industrial Electric Motor",
+        "evidence_chunk": null,
+        "page_number": null,
+        "validation_status": "passed"
+      },
+      "category": {
+        "value": "Motors",
+        "original_value": "Motors",
+        "normalized_value": "Motors",
+        "normalized_unit": null,
+        "confidence": 1.0,
+        "method": "extracted",
+        "source": "milacron_fan.pdf",
+        "evidence": "Motors",
+        "evidence_chunk": null,
+        "page_number": null,
+        "validation_status": "passed"
+      },
+      "attributes": {
+        "voltage": {
+          "value": "460.0 V",
+          "original_value": "460 V",
+          "normalized_value": "460.0 V",
+          "normalized_unit": "V",
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "milacron_fan.pdf",
+          "evidence": "Voltage: 460 V",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "power": {
+          "value": "5.0 HP (3.73 kW)",
+          "original_value": "5 HP",
+          "normalized_value": "5.0 HP (3.73 kW)",
+          "normalized_unit": "HP",
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "milacron_fan.pdf",
+          "evidence": "Power: 5 HP",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "speed": {
+          "value": "1750.0 RPM",
+          "original_value": "1750 RPM",
+          "normalized_value": "1750.0 RPM",
+          "normalized_unit": "RPM",
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "milacron_fan.pdf",
+          "evidence": "Speed: 1750 RPM",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "frame_size": {
+          "value": "NEMA 184T",
+          "original_value": "NEMA 184T",
+          "normalized_value": "NEMA 184T",
+          "normalized_unit": null,
+          "confidence": 0.93,
+          "method": "inferred",
+          "source": "Reference Corpus: motor_standards.txt (Sec 2. NEMA Frame Sizes for 3 HP to 5 HP Motors)",
+          "evidence": "Quote: \"Standard NEMA frame size for 5 HP 1750 RPM motors is NEMA 184T.\"",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        }
+      },
+      "validation": {
+        "conflicts": [],
+        "review_required": false,
+        "field_statuses": {
+          "voltage": "passed",
+          "power": "passed",
+          "speed": "passed",
+          "frame_size": "passed"
+        }
+      },
+      "pipeline_version": "1.0.0"
+    },
+    {
+      "sku": "PRV-50-SS",
+      "name": {
+        "value": "Parker Safety Relief Valve",
+        "original_value": "Parker Safety Relief Valve",
+        "normalized_value": "Parker Safety Relief Valve",
+        "normalized_unit": null,
+        "confidence": 0.99,
+        "method": "extracted",
+        "source": "parker_valve.pdf",
+        "evidence": "Parker Safety Relief Valve",
+        "evidence_chunk": null,
+        "page_number": null,
+        "validation_status": "passed"
+      },
+      "category": {
+        "value": "Valves",
+        "original_value": "Valves",
+        "normalized_value": "Valves",
+        "normalized_unit": null,
+        "confidence": 1.0,
+        "method": "extracted",
+        "source": "parker_valve.pdf",
+        "evidence": "Valves",
+        "evidence_chunk": null,
+        "page_number": null,
+        "validation_status": "passed"
+      },
+      "attributes": {
+        "set_pressure": {
+          "value": "150.0 psi (10.34 bar)",
+          "original_value": "150 psi",
+          "normalized_value": "150.0 psi (10.34 bar)",
+          "normalized_unit": "psi",
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "parker_valve.pdf",
+          "evidence": "Set Pressure: 150 psi",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "material": {
+          "value": "316 Stainless Steel",
+          "original_value": "316 Stainless Steel",
+          "normalized_value": "316 Stainless Steel",
+          "normalized_unit": null,
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "parker_valve.pdf",
+          "evidence": "Material: 316 Stainless Steel",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "max_temperature": {
+          "value": "400.0 \u00b0F (204.4 \u00b0C)",
+          "original_value": "400 \u00b0F",
+          "normalized_value": "400.0 \u00b0F (204.4 \u00b0C)",
+          "normalized_unit": "\u00b0F",
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "parker_valve.pdf",
+          "evidence": "Max Temperature: 400 \u00b0F",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "flow_rate": {
+          "value": "45.0 GPM",
+          "original_value": "45 GPM",
+          "normalized_value": "45.0 GPM",
+          "normalized_unit": "GPM",
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "parker_valve.pdf",
+          "evidence": "Flow Rate: 45 GPM",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        }
+      },
+      "validation": {
+        "conflicts": [],
+        "review_required": false,
+        "field_statuses": {
+          "set_pressure": "passed",
+          "material": "passed",
+          "max_temperature": "passed",
+          "flow_rate": "passed"
+        }
+      },
+      "pipeline_version": "1.0.0"
+    },
+    {
+      "sku": "TBV-200-SPARSE",
+      "name": {
+        "value": "Teflon-Lined Compact Ball Valve",
+        "original_value": "Teflon-Lined Compact Ball Valve",
+        "normalized_value": "Teflon-Lined Compact Ball Valve",
+        "normalized_unit": null,
+        "confidence": 0.99,
+        "method": "extracted",
+        "source": "teflon_ball_valve_sparse.pdf",
+        "evidence": "Teflon-Lined Compact Ball Valve",
+        "evidence_chunk": null,
+        "page_number": null,
+        "validation_status": "passed"
+      },
+      "category": {
+        "value": "Valves",
+        "original_value": "Valves",
+        "normalized_value": "Valves",
+        "normalized_unit": null,
+        "confidence": 1.0,
+        "method": "extracted",
+        "source": "teflon_ball_valve_sparse.pdf",
+        "evidence": "Valves",
+        "evidence_chunk": null,
+        "page_number": null,
+        "validation_status": "passed"
+      },
+      "attributes": {
+        "port_size": {
+          "value": "2.0 in (50.8 mm)",
+          "original_value": "2.0 in NPT",
+          "normalized_value": "2.0 in (50.8 mm)",
+          "normalized_unit": "in",
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "teflon_ball_valve_sparse.pdf",
+          "evidence": "Nominal Size: 2.0 in NPT",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "handle_type": {
+          "value": "Lever Handle",
+          "original_value": "Lever Handle",
+          "normalized_value": "Lever Handle",
+          "normalized_unit": null,
+          "confidence": 0.99,
+          "method": "extracted",
+          "source": "teflon_ball_valve_sparse.pdf",
+          "evidence": "Handle Type: Lever Handle",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "passed"
+        },
+        "set_pressure": {
+          "value": "insufficient_data",
+          "original_value": "insufficient_data",
+          "normalized_value": "insufficient_data",
+          "normalized_unit": null,
+          "confidence": 0.0,
+          "method": "flagged",
+          "source": null,
+          "evidence": "No supporting evidence found in document or reference corpus.",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "warning"
+        },
+        "material": {
+          "value": "insufficient_data",
+          "original_value": "insufficient_data",
+          "normalized_value": "insufficient_data",
+          "normalized_unit": null,
+          "confidence": 0.0,
+          "method": "flagged",
+          "source": null,
+          "evidence": "No supporting evidence found in document or reference corpus.",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "warning"
+        },
+        "max_temperature": {
+          "value": "insufficient_data",
+          "original_value": "insufficient_data",
+          "normalized_value": "insufficient_data",
+          "normalized_unit": null,
+          "confidence": 0.0,
+          "method": "flagged",
+          "source": null,
+          "evidence": "No supporting evidence found in document or reference corpus.",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "warning"
+        },
+        "flow_rate": {
+          "value": "insufficient_data",
+          "original_value": "insufficient_data",
+          "normalized_value": "insufficient_data",
+          "normalized_unit": null,
+          "confidence": 0.0,
+          "method": "flagged",
+          "source": null,
+          "evidence": "No supporting evidence found in document or reference corpus.",
+          "evidence_chunk": null,
+          "page_number": null,
+          "validation_status": "warning"
+        }
+      },
+      "validation": {
+        "conflicts": [],
+        "review_required": true,
+        "field_statuses": {
+          "port_size": "passed",
+          "handle_type": "passed",
+          "set_pressure": "warning",
+          "material": "warning",
+          "max_temperature": "warning",
+          "flow_rate": "warning"
+        }
+      },
+      "pipeline_version": "1.0.0"
+    }
+  ],
+  "summary": {
+    "products_processed": 6,
+    "attributes_extracted": 29,
+    "attributes_enriched": 4,
+    "attributes_verified": 33,
+    "needs_review": 6,
+    "average_confidence": 85.2,
+    "catalog_completeness": 86.5
+  }
+}

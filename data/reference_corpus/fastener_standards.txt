@@ -1,0 +1,17 @@
+# INDUSTRIAL FASTENER STANDARDS AND SPECIFICATIONS
+
+## 1. Material Grades and Strengths
+- Grade 2 Bolts: Made from low or medium carbon steel. Tensile strength is 74,000 PSI. No markings on the bolt head.
+- Grade 5 Bolts: Made from medium carbon steel, quenched and tempered. Tensile strength is 120,000 PSI. Head marking consists of 3 radial lines.
+- Grade 8 Bolts: Made from medium carbon alloy steel, quenched and tempered. Tensile strength is 150,000 PSI. Head marking consists of 6 radial lines. Highly recommended for heavy duty industrial or structural applications.
+- Stainless Steel 18-8 (304): Excellent corrosion resistance. Tensile strength is 70,000 to 100,000 PSI.
+
+## 2. Thread Sizing and Pitches
+- Unified National Coarse (UNC): Standard coarse threads. E.g., 1/4"-20, 3/8"-16, 1/2"-13. Recommended for general locking in soft materials.
+- Unified National Fine (UNF): Standard fine threads. E.g., 1/4"-28, 3/8"-24, 1/2"-20. Used in high-vibration applications.
+- Metric Threads (ISO): Spaced by pitch in millimeters. E.g., M6x1.0, M8x1.25, M10x1.5.
+
+## 3. Plating and Finishes
+- Zinc Plating: Standard rust protection (clear or yellow chromate). Provides 72 to 96 hours of salt spray resistance.
+- Hot-Dip Galvanized: Thick zinc coating for outdoor use. Offers superior corrosion resistance but requires oversized nuts to fit.
+- Black Oxide: Decorative finish with light oil lubrication. Little to no corrosion resistance.

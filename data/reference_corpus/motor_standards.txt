@@ -1,0 +1,19 @@
+# ELECTRIC MOTOR STANDARDS AND SPECIFICATIONS
+
+## 1. Voltage and Electrical Configurations
+- Standard single-phase industrial motors run at 115V or 230V AC.
+- Standard three-phase industrial motors run at 208V, 230V, 460V, or 575V AC. The standard utility voltage in North American industrial plants is 460V AC at 60Hz.
+- European standard industrial motors run at 400V AC at 50Hz.
+
+## 2. NEMA Frame Sizes
+- NEMA 56: Standard frame size for small motors (1/4 HP to 1.5 HP). Shaft diameter is 5/8" and height is 3.5".
+- NEMA 143T / 145T: Standard frame size for medium motors (1 HP to 3 HP). Shaft diameter is 7/8".
+- NEMA 182T / 184T: Standard frame size for 3 HP to 5 HP motors. Shaft diameter is 1-1/8".
+
+## 3. Insulation and Enclosure Classes
+- Class F Insulation: The standard industrial rating, capable of withstanding operating temperatures up to 311°F (155°C).
+- Enclosure Types:
+  - ODP (Open Drip Proof): Indoor use, clean environments.
+  - TEFC (Totally Enclosed Fan Cooled): Standard outdoor or dusty environment motor.
+  - TENV (Totally Enclosed Non-Ventilated): Used in washdown or sanitary environments where external fans can trap contaminants.
+  - XP (Explosion Proof): Certified for hazardous environments with flammable gases or dust.
