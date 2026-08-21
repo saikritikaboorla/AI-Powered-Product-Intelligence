@@ -1,8 +1,5 @@
 # APEX INTELLIGENCE — AI-Powered Product Intelligence for Industrial Commerce
 
-> **UniHack 2026 Challenge Prototype**  
-> End-to-end industrial product attribute normalization, RAG-grounded enrichment, deterministic validation, per-field evidence traceability, human-in-the-loop review, and catalog-scale batch processing.
-
 ---
 
 ## 🎯 Executive Summary
@@ -172,4 +169,4 @@ python backend/test_pipeline.py
 
 ## 📜 License
 
-Distributed under the MIT License. See `LICENSE` for details.
+Distributed under the MIT License. See `LICENSE` for details. 
